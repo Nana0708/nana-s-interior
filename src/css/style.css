@@ -151,6 +151,25 @@ body {
     transform: translate(-50%, -100%);
   }
 
+  /* is-active 付いたあと */
+  .m_hamburger.is-active {
+
+  }
+  
+  .m_hamburger-bar.is-active span:first-child {
+    transform: skew(45deg);
+  }
+  
+  .m_hamburger-bar.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .m_hamburger-bar.is-active:last-child {
+    transform: skew(-45deg);
+  }
+
+  
+
   .m_section-ttl {
     font-size: 24px;
     position: relative;

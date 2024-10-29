@@ -37,7 +37,7 @@
       src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
       defer
     ></script>
-    <script src="js/main.js" defer></script>
+    <script src="/src/js/main.js" defer></script>
   </head>
   <body>
     <header class="l_header">
@@ -53,7 +53,7 @@
         </a>
       </h1>
 
-      <nav class="l_header-nav">
+      <nav class="l_header-nav js-nav">
         <ul class="l_header-nav_list">
           <li class="l_header-nav_item">Features</li>
           <li class="l_header-nav_item">Products</li>
@@ -63,12 +63,13 @@
         </ul>
       </nav>
 
-      <button class="m_hamburger">
+      <button class="m_hamburger is-active" id="js-hamburger">
         <span class="m_hamburger-bar"></span>
         <span class="m_hamburger-bar"></span>
         <span class="m_hamburger-bar"></span>
       </button>
     </header>
+
 
     <div class="top_kv">
       <div class="top_kv-contents l_container">
