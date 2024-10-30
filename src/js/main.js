@@ -25,3 +25,12 @@
     autoAlpha: 0,
     x: -100
   });
+
+  // オープニングアニメーション
+
+  gsap.timeline()
+  .from(".js_opening-txt",{
+    duration: 1.2,
+    autoAlpha: 0,
+    y:40,
+  });
