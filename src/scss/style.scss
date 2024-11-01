@@ -1,15 +1,21 @@
+@use '_variable' as var;
+@use '_mixin' as mix;
+
+
 .m_hamburger {
-    width: 30px;
-    height: 22px;
-    position: relative;
-  }
-  .m_hamburger-bar {
-    width: 100%;
-    height: 2px;
-    position: absolute;
-    background: #000;
-    left: 50%;
-  }
+  width: 30px;
+  height: 22px;
+  position: relative;
+
+&-bar {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background: #000;
+  left: 50%;
+}}
+
+
   .m_hamburger-bar:first-child {
     top: 0;
     transform: translate(-50%, 0);
@@ -145,6 +151,25 @@
   }
   
   /* ---------- module ---------- */
+
+  .m_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffcc00; /* 背景色 */
+  }
+  
+  .m_bg2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 0, 0, 0.5); /* 半透明の赤 */
+    mix-blend-mode: multiply; /* ブレンドモードの指定 */
+    transform: translate(-50%, -50%);
   
   .m_hamburger {
       width: 32px;
@@ -176,11 +201,7 @@
       transform: translate(-50%, -100%);
     }
   
-    /* is-active 付いたあと */
-    .m_hamburger.is-active {
-  
-    }
-    
+
     .m_hamburger-bar.is-active span:first-child {
       transform: skew(45deg);
     }
@@ -224,6 +245,53 @@
       align-items: center;
     }
   
+
+
+
+    .m_opening {
+      background: var.$primaryColor;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: var.$zIndexModal;
+      display: flex;
+
+      .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffcc00; /* 背景色 */
+}
+
+.foreground {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(255, 0, 0, 0.5); /* 半透明の赤 */
+  mix-blend-mode: multiply; /* ブレンドモードの指定 */
+  transform: translate(-50%, -50%);
+
+      &_txt {
+        text-align: center;
+        margin: auto;
+        font-size: 32px;
+        font-weight: bold;
+      }
+    }
+
+
+
+    .js_opening .is-active {
+      overflow: hidden;
+      
+    }
+
   
   /* ---------- top_kv ---------- */
   .top_kv {
@@ -251,6 +319,10 @@
     .top_kv-copy {
       left: 50%;
     }
+  }
+
+  .top_kv_sub-copy {
+    font-size: 32px;
   }
   
   .top_kv_scroll-down {

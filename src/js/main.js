@@ -12,8 +12,35 @@
 //   });
   // kv部分のスライドイン
 
-  gsap
-  .timeline()
+  const body = document.querySelector(".js_body");
+
+
+  // オープニングアニメーション
+  const opening = document.querySelector(".js_opening");
+
+function OpeningAnime() {
+	// bodyタグの範囲に対して.is-activeをつけ外しする（ハンバーガーで指定したoverflow:hiddenが効く）
+  body.classList.toggle("is-active");
+
+  gsap.timeline(function () {})
+  .from(".js_opening-txt",{
+    duration: 1.2,
+    autoAlpha: 0,
+    y:40,
+  })
+
+  .to(".js_opening",{
+    autoAlpha: 0,
+    duration: 0.6,
+          //1.2秒の遅延
+    delay: 1.2,
+          // onComplete:アニメーションが完了したら
+    onComplete: function () {
+      body.classList.toggle("is-active");
+    },
+
+  })
+
   .from(".js_copy", {
     duration: 1.0 ,
     autoAlpha: 0,
@@ -24,13 +51,8 @@
     duration: 0.6 ,
     autoAlpha: 0,
     x: -100
-  });
+  }); 
+};
 
-  // オープニングアニメーション
-
-  gsap.timeline()
-  .from(".js_opening-txt",{
-    duration: 1.2,
-    autoAlpha: 0,
-    y:40,
-  });
+//関数呼び出し
+OpeningAnime();

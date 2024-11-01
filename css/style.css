@@ -4,7 +4,6 @@
   height: 22px;
   position: relative;
 }
-
 .m_hamburger-bar {
   width: 100%;
   height: 2px;
@@ -174,7 +173,6 @@ body {
   transform: translate(-50%, -100%);
 }
 
-/* is-active 付いたあと */
 .m_hamburger-bar.is-active span:first-child {
   transform: skew(45deg);
 }
@@ -215,6 +213,27 @@ body {
   align-items: center;
 }
 
+.m_opening {
+  background: #E7DDD3;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  display: flex;
+}
+.m_opening_txt {
+  text-align: center;
+  margin: auto;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.js_opening .is-active {
+  overflow: hidden;
+}
+
 /* ---------- top_kv ---------- */
 .top_kv {
   height: 100vh;
@@ -240,6 +259,10 @@ body {
     left: 50%;
   }
 }
+.top_kv_sub-copy {
+  font-size: 32px;
+}
+
 .top_kv_scroll-down {
   display: none;
 }
