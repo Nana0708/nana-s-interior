@@ -143,6 +143,15 @@ body {
 }
 
 /* ---------- module ---------- */
+.m_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffcc00; /* 背景色 */
+}
+
 .m_hamburger {
   width: 32px;
   height: 24px;
