@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>ページタイトル</title>
+    <title>nana's Portfolio</title>
     <meta name="description" content="ページの説明" />
     <meta name="format-detection" content="telephone=no" />
 
@@ -36,13 +36,17 @@
       src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
       defer
     ></script>
+    <!-- G-SAP -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <!-- スクロールトリガー -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="/src/js/main.js" defer></script>
+
   </head>
   <body class="js_body">
     <div class="m_opening js_opening">
     <div class="m_opening_txt js_opening-txt">
-      <p class="m_opening_heading">Nana's interior</p>
+      <p class="m_opening_heading">Nana's Portfolio</p>
       <p class="m_opening_desc">
         since 1991
       </p>
@@ -101,10 +105,10 @@
       <section class="top_features">
         <div class="l_contents">
           <h2 class="m_section-ttl">Features</h2>
-          <div class="top_features-contents l_container">
+          <div class="top_features-contents l_container js_features-trigger">
             <div class="top_features-wrapper">
               <!-- １番目 -->
-              <div class="top_features_item">
+              <div class="top_features_item js_features">
                 <div class="top_features_item_img-wrapper">
                   <img
                     src="/src/img/img_feature.jpg"
@@ -120,7 +124,7 @@
                 </p>
               </div>
               <!-- ２番目 -->
-              <div class="top_features_item">
+              <div class="top_features_item js_features">
                 <div class="top_features_item_img-wrapper">
                   <img
                     src="/src/img/img_feature02.jpg"
@@ -136,7 +140,7 @@
                 </p>
               </div>
               <!-- 3番目 -->
-              <div class="top_features_item">
+              <div class="top_features_item js_features">
                 <div class="top_features_img-wrapper">
                   <img
                     src="/src/img/img_feature03.jpg"

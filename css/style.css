@@ -319,6 +319,11 @@ body {
 }
 
 /* ---------- top_features ---------- */
+.top_features-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
 .top_features_item:not(:first-of-type) {
   margin-top: 40px;
 }
@@ -334,6 +339,10 @@ body {
 }
 
 /* ---------- top_product ---------- */
+.top_product-item {
+  width: 33.3333333333%;
+}
+
 .top_product_img-wrapper:not(:first-of-type) {
   margin-top: 40px;
 }

@@ -56,3 +56,27 @@ function OpeningAnime() {
 
 //関数呼び出し
 OpeningAnime();
+
+// // js_featuresのスライドイン
+
+gsap.from(".js_features", {
+  y: 200,
+  autoAlpha: 0,
+  duration: 1,
+  ease: "Power4.inOut",
+  scrollTrigger: {
+    trigger: ".js_features-trigger",
+    start: "top center",
+  
+    // markers: true, ←発火するスクロール位置や終了位置をマーカーする
+  },
+  stagger: {
+    // each: 指定した時間が経過された時に次の要素のアニメーションを開始する
+    each: 0.6,
+    // amount: アニメーションの総時間（eachかamountのどちらかを指定する）
+    // amount: 1,
+    from: "start",
+    // 順番に表示する際のアニメーションスピード
+    // ease: "bounce"
+  },
+});

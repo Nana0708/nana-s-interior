@@ -362,6 +362,11 @@
   
   
   /* ---------- top_features ---------- */
+.top_features-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
   .top_features_item:not(:first-of-type) {
     margin-top: 40px;
   
@@ -379,6 +384,11 @@
   
   
   /* ---------- top_product ---------- */
+
+
+  .top_product-item {
+    width: calc(100% / 3);
+  }
   
   .top_product_img-wrapper:not(:first-of-type) {
     margin-top: 40px;
