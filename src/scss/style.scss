@@ -271,6 +271,27 @@
         font-weight: bold;
       }
     }
+    
+    // 波線
+    .custom-shape-divider-top-1730811196 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+  }
+  
+  .custom-shape-divider-top-1730811196 svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 150px;
+  }
+  
+  .custom-shape-divider-top-1730811196 .shape-fill {
+      fill: #FFFFFF;
+  }
 
 
 
@@ -361,7 +382,14 @@
   
   
   
-  /* ---------- top_features ---------- */
+  /* ---------- top_features about ---------- */
+.top_about-wrapper {
+  display: flex;
+}
+
+.top_about_left-img {
+  width: 500px;
+}
 .top_features-wrapper {
   display: flex;
   gap: 20px;
@@ -385,6 +413,15 @@
   
   /* ---------- top_product ---------- */
 
+  .top_product {
+    background: var.$primaryColor;
+  }
+
+  .top_product-wrapper {
+    display: flex;
+    gap: 32px;
+
+  }
 
   .top_product-item {
     width: calc(100% / 3);
