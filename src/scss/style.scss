@@ -390,6 +390,10 @@
 .top_about_left-img {
   width: 500px;
 }
+
+.about_left-wrapper {
+  width: calc(100% /2);
+}
 .top_features-wrapper {
   display: flex;
   gap: 20px;
@@ -534,4 +538,32 @@
   
   .contact_form_radio {
     appearance: checkbox;
+  }
+
+  // faqセクション
+
+  .top_faq-button {
+    box-shadow: 2px 2px 2px 0px rgba(170, 170, 170, 0.161);
+    width: 100%;
+    padding: 32px 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .top_faq-content {
+    display: flex;
+  }
+
+  .top_faq-txt {
+    padding-left: 16px;
+    
+  }
+
+  .top_faq_icon__q {
+    color: $primaryColor02;
+  }
+
+  .top_faq_icon__a {
+    color: red;
   }

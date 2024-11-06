@@ -347,6 +347,10 @@ body {
   width: 500px;
 }
 
+.about_left-wrapper {
+  width: 50%;
+}
+
 .top_features-wrapper {
   display: flex;
   gap: 20px;
@@ -487,4 +491,21 @@ body {
   -webkit-appearance: checkbox;
      -moz-appearance: checkbox;
           appearance: checkbox;
+}
+
+.top_faq-button {
+  box-shadow: 2px 2px 2px 0px rgba(170, 170, 170, 0.161);
+  width: 100%;
+  padding: 32px 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top_faq-content {
+  display: flex;
+}
+
+.top_faq-txt {
+  padding-left: 16px;
 }/*# sourceMappingURL=style.css.map */
