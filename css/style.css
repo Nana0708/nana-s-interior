@@ -508,4 +508,65 @@ body {
 
 .top_faq-txt {
   padding-left: 16px;
+}
+
+.top_faq_icon {
+  -moz-text-align-last: left;
+       text-align-last: left;
+}
+
+.top_faq_icon__q {
+  color: #887260;
+}
+
+.top_faq_icon__a {
+  color: red;
+}
+
+.top_faq_mark {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.top_faq_mark::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 100%;
+  background: #333;
+}
+.top_faq_mark::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 2px;
+  background: #333;
+}
+
+.test_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.test_img_wrapper {
+  width: 400px;
+  height: 400px;
+  background: url(/src/img/img_product03.jpg);
+}
+.test_img_wrapper:nth-child(2) {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/src/img/img_product03.jpg);
+}
+
+.test_txt {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */
