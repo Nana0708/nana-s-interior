@@ -1,18 +1,19 @@
-// ハンバーガーメニュー
+// ハンバーガー
+const hamburger = document.querySelector(".js_hamburger");
+const navigation = document.querySelector(".js_nav");
+const body = document.querySelector(".js_body");
+
+// hamburger.addEventListener("click", () => {
+
+//   hamburger.classList.toggle("is-active");
+//   navigation.classList.toggle("is-active");
+//   body.classList.toggle("is-active");
+
+// });
 
 
-// const ham = document.querySelector("js-hamburger");
-// const nav = document.querySelector("js-nav");
-
-// ham.addEventListener('click', function () { 
-//     ham.classList.toggle("is-active");
-//     nav.classList.toggle("is-active");
-    
-  
-//   });
   // kv部分のスライドイン
 
-  const body = document.querySelector(".js_body");
 
 
   // オープニングアニメーション

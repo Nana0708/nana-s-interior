@@ -120,7 +120,13 @@ body {
 }
 
 .l_header-nav {
-  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-index-modal);
+  background: var(--black-color);
 }
 
 .l_header-nav_list {
@@ -559,14 +565,57 @@ body {
 .test_img_wrapper {
   width: 400px;
   height: 400px;
-  background: url(/src/img/img_product03.jpg);
-}
-.test_img_wrapper:nth-child(2) {
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/src/img/img_product03.jpg);
 }
 
-.test_txt {
-  font-size: 20px;
+.test_img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.sample_txt {
+  background-image: linear-gradient(transparent 0%, transparent 75%, #BD6856 75%, #BD6856 100%);
+}
+
+.box-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.box {
+  padding: 20px;
+  border: 1px solid #000;
   text-align: center;
-  font-weight: bold;
+}
+.box:nth-child(3) {
+  order: 1;
+}
+
+.js_hamburger.is-active .m_hamburger-bar:first-child {
+  top: 50%;
+  transform: translate(-50%, 0) rotate(45deg);
+}
+.js_hamburger.is-active .m_hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+.js_hamburger.is-active .m_hamburger-bar:last-child {
+  transform: rotate(-45deg);
+  transform: translate(-50%, 0) rotate(-45deg);
+}
+
+@media screen and (min-width: 1080px) {
+  .js_nav {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+.js_nav.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.js_faq_mark::after {
+  transition: opacity 0.24s;
 }/*# sourceMappingURL=style.css.map */
