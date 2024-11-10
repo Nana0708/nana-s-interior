@@ -57,21 +57,8 @@
     --z-index-modal: 200;
   }
 
-  
-
-  // 22
-
-
-  
-
-
-
  
- 
-  
 
-  
-  
   /* ---------- base ---------- */
   body {
       color: var(--black-color);
@@ -150,7 +137,6 @@
     bottom: 0;
     left: 0;
     z-index: var(--z-index-modal);
-    background: var(--black-color);
   }
 
   @media screen and (min-width: 1080px) {
@@ -159,6 +145,7 @@
       position: static;
       background: transparent;
     }
+  }
   
   
   .l_header-nav_list {
@@ -486,8 +473,14 @@
     font-size: 18px;
     font-weight: bold;
     margin-top: 10px;
+
+    @media (min-width: 1080px) {
+      font-size: 24px;
+    }
   }
-  
+
+
+
   .top_news-date {
     margin-top: 10px;
   }
@@ -692,23 +685,23 @@
  
 }
   
-// .js_nav {
-//   opacity: 1;
-//   pointer-events: none;
-//   transition: opacity 0.24s;
+.js_nav {
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 0.24s;
+}
+
+// @media screen and (min-width: 1080px) {
+//   .js_nav {
+//     opacity: 1;
+//     pointer-events: auto;
+//   }
 // }
 
-@media screen and (min-width: 1080px) {
-  .js_nav {
-    opacity: 1;
-    pointer-events: auto;
-  }
-}
-
-.js_nav.is-active {
-  opacity: 1;
-  pointer-events: auto;
-}
+// .js_nav.is-active {
+//   opacity: 1;
+//   pointer-events: auto;
+// }
 
 .js_faq_mark::after {
   transition: opacity 0.24s;

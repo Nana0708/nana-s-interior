@@ -1,0 +1,21 @@
+$sm: 375px;
+$md: 768px;
+$lg: 1080px;
+$xl: 1200px;
+
+
+@mixin mq($bp) {
+    @media (min-width: ($bp)){
+       @content; 
+    }
+}
+
+.top_news-ttl {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+
+    @include mq($lg) {
+        font-size: 24px;
+    }
+  }
