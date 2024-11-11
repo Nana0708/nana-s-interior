@@ -10,12 +10,3 @@ $xl: 1200px;
     }
 }
 
-.top_news-ttl {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
-
-    @include mq($lg) {
-        font-size: 24px;
-    }
-  }

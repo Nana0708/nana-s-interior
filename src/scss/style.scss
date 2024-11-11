@@ -2,6 +2,7 @@
 @use '_mixin' as mix;
 
 
+
 .m_hamburger {
   width: 30px;
   height: 22px;
@@ -706,3 +707,44 @@
 .js_faq_mark::after {
   transition: opacity 0.24s;
 }
+
+
+
+.l_footer {
+  background: var.$primaryColor02;
+  color: var.$whiteColor;
+
+  &_map iframe {
+    width: 100%;
+    height: 100%;
+  }
+  &_map {
+    width: 345px;
+    height: 220px;
+  }
+  &_inner {
+    margin: 0 auto;
+    padding: 16px;
+
+  }
+  &_sns {
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+
+  }
+  &-icon-img_wrapper {
+    margin: 0 auto;
+    width: 28px;
+    height: 28px;
+  }
+
+    &-logo_img-wrapper{
+      width: 190px;
+      height: 28px;
+      margin-top: 40px;
+    }
+
+  
+}
+
