@@ -1,0 +1,12 @@
+
+$sm: 375px;
+$md: 768px;
+$lg: 1080px;
+$xl: 1200px;
+
+
+@mixin mq($bp) {
+    @media (min-width: ($bp)){
+       @content; 
+    }
+}
