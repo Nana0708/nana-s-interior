@@ -10,3 +10,10 @@ $xl: 1200px;
        @content; 
     }
 }
+
+// style.scssで呼び出すとき
+
+// @include mix.mq(mix.$lg) {
+//     font-size: 20px;
+//     }
+

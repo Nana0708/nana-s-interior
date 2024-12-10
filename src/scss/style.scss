@@ -17,32 +17,369 @@ body {
 .l_container,
 .l_container-lg{
     width: 100%;
-    padding: 0 16px;
     margin: 0 auto;
 }
 
 .l_container-sm {
-    max-width: calc(var.$contentWidthSm + 32px);
+    max-width: var.$contentWidthSm;
 }
 
 .l_container {
-    max-width: calc(var.$contentWidth + 32px);
+    max-width: var.$contentWidth;
 }
 
 .l_container-lg {
-    max-width: calc(var.$contentWidthLg + 32px);
+    max-width: var.$contentWidthLg;
 }
 
-.l_contents {
-    padding: 120px 0;
-}
+
 // ********* header ********* //
+.l_header {
+    height: 55px;
+    width: 100%;
+    padding: 0 15px;
+    background: var.$whiteColor;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var.$zIndexHeader;
+    &-logo {
+        font-size: 30px;
+        font-weight: bold;
+        @include mix.mq(mix.$lg) {
+            font-size: 36px;
+        } 
+    }
+    &-nav {
+        display: none;
+        background: var.$whiteColor; /* 背景色 */
+        width: 70%;
+        position: fixed;
+        top: 55px;
+        right: 0;
+        bottom: 0;
+        background: var.$primaryColor;
+        @include mix.mq(mix.$lg) {
+            display: block;
+            position: static;
+            width: auto;
+            height: auto;
+            opacity: 1;
+            pointer-events: inherit;
+            background: transparent;
+    }
+        &__list {
+        // hamアクティブ時のスタイル
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @include mix.mq(mix.$lg) {
+                flex-direction: row;
+                position: static;
+                transform: none;
+                gap: 40px;
+        }
+    }
+            &__item {
+                    font-size: 16px;
+                    color: var.$whiteColor;
+                    text-align: left;
+            @include mix.mq(mix.$lg) {
+                font-size: 16px;
+                color: var.$blackColor;
+
+            }
+} 
+            &__link {
+                position: relative;
+                &:hover::after {
+                    transform: scale(1,1);
+                }
+                &::after {
+                    position: absolute;
+                    left: 10%;
+                    bottom: -5px;
+                    content: "";
+                    width: 80%;
+                    height: 1px;
+                    background: var.$blackColor;
+                    transition: 0.3s all;
+                    transform: scale(0,1);
+                }
+ 
+            }
+}
+        &__sns--wrapper {
+            display: flex;
+            gap: 20px;
+
+        }
+}
+
+
 // ********* footer ********* //
+.l_footer {
+    background: var.$primaryColor;
+    margin: 60px auto;
+    padding: 60px 15px;
+    &__main-container{
+    @include mix.mq(mix.$lg) {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        padding: 60px 20px;
+    }
+}
+    &__access {
+    &--wrapper{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: end;
+        gap: 20px;
+    }
+        
+    &--map-container iframe {
+        width: 100%;
+        height: 100%;
+    }
+    &--map-container  {
+        width: 345px;
+        height: 220px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &--txt {
+        color: var.$whiteColor;
+         margin-top: 8px;
+        }
+    }
+    &-logo {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        color: var.$whiteColor;
+        margin-top: 20px;
+        @include mix.mq(mix.$lg) {
+            font-size: 36px;
+            text-align: left;
+        }
+    }
+    &-nav {
+        margin-top: 20px;
+        &__list {
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            justify-content: left;
+            align-items: center;
+            height: 100%;
+            color: var.$whiteColor;
+            @include mix.mq(mix.$lg) {
+                flex-direction: row;
+                gap: 20px;
+            }
+    }
+    &__link {
+        transition: 0.3s all;
+        &:hover {
+            opacity: 70%;
+        }
+    }
+}
+&__copy {
+    margin-top: 20px;
+    text-align: center;
+    &--txt {
+        color: var.$whiteColor;
+        font-size: 12px;
+
+    }
+}
+&__sns--wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    @include mix.mq(mix.$lg) {
+        justify-content: start;
+    }
+}
+}
+.l_footer .m_sns__img {
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+
 
 
 // -------------- utility --------------//
 
 // -------------- module 使いまわしができるパーツ --------------//
+.m_section__ttl {
+    font-size: 24px;
+    @include mix.mq(mix.$lg) {
+        font-size: 36px;
+        position: relative;
+        }
+        &::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: var.$accentColor;
+            position: absolute;
+            left: 33%;
+            @include mix.mq(mix.$lg) {
+                width: 20px;
+                height: 20px;
+                }
+        }
+}
+
+// .m_btn {
+//     width: 200px;
+//     height: 50px;
+//     border: 1px solid var.$blackColor;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     font-size: 14px;
+
+//     @include mix.mq(mix.$lg) {
+//         width: 280px;
+//         height: 70px;
+//         font-size: 20px;
+//         }
+
+//     &__more {
+//         position: relative;
+//         &::before {
+//             content: "";
+//             position: absolute;
+//             top: 50%;
+//             right: -30px;
+//             width: 30%;
+//             height: 1px;
+//             background: #333333;
+//             -webkit-transition: all .3s;
+//             transition: all .3s;
+//         }
+//         &::after {
+//             content: "";
+//             position: absolute;
+//             top: 45%;
+//             right: -32px;
+//             width: 15px;
+//             height: 1px;
+//             background: #333333;
+//             -webkit-transform: rotate(35deg);
+//             transform: rotate(35deg);
+//             -webkit-transition: all .3s;
+//             transition: all .3s;
+//         }
+
+//     }
+// }
+
+  .m_btn{
+    width: 200px;
+    height: 50px;
+    background:var.$primaryColor;
+    color:var.$whiteColor;
+    border:none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    font-size:14px;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    &:hover{
+        background:var.$whiteColor;
+        color: var.$primaryColor;
+
+      }
+    &:before{
+        content:'';
+        position:absolute;
+        top:0;
+        right:0;
+        height:2px;
+        width:0;
+        background: var.$primaryColor;
+        transition:400ms ease all;
+      }
+    &::after{
+        content:'';
+        position:absolute;
+        top:0;
+        right:0;
+        height:2px;
+        width:0;
+        background: var.$primaryColor;
+        transition:400ms ease all;
+      }
+      &:after{
+        right:inherit;
+        top:inherit;
+        left:0;
+        bottom:0;
+      }
+      &:hover:before,m_btn:hover:after{
+        width:100%;
+        transition:800ms ease all;
+      }
+  }
+  .m_hamburger {
+    width: 32px;
+    height: 24px;
+    position: relative;
+    z-index: var(--z-index-menu);
+  }
+  
+  .m_hamburger-bar {
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background: var(--black-color);
+    left: 50%;
+  }
+  
+  .m_hamburger-bar:first-child {
+    top: 0;
+    transform: translate(-50%, 0);
+  }
+  
+  .m_hamburger-bar:nth-child(2) {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .m_hamburger-bar:last-child {
+    top: 100%;
+    transform: translate(-50%, -100%);
+  }
+
+  
+  .m_sns__img {
+    display: none;
+    @include mix.mq(mix.$lg) {
+    display: block;
+    width: 20px;
+    height: 20px;
+    }
+
+}
 // -------------- js --------------//
 // -------------- top --------------//
 // ********* top_kv ********* //
