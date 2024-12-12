@@ -47,6 +47,14 @@
 <link rel="stylesheet" href="css/style.css" />
 
 <!-- js -->
+<script src="/src/js/main.js" defer></script>
+ <!-- スワイパー -->
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <!-- g-sap -->
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
@@ -243,6 +251,57 @@
             <div class="l_container">
                 <div class="top_gallery__inner">
                     <h2 class="m_section__ttl">Gallery</h2>
+                    <!-- ここからカルーセル -->
+                    <div class="top_gallery__list-wrapper js_success-swiper">
+                        <ul class="top_gallery__list swiper-wrapper">
+                          <li class="top_gallery__item swiper-slide">
+                            <div class="top_gallery__inner">
+                              <div class="top_gallery__img-wrapper">
+                                <img
+                                  src="/src/img/img_gallery.jpg"
+                                  width="800"
+                                  height="800"
+                                  alt="家具の写真"
+                                  class="top_gallery_img"
+                                />
+                              </div>
+                            </div>
+                            <!-- /.top_success-inner -->
+                          </li>
+                          <li class="top_gallery__item swiper-slide">
+                            <div class="top_gallery__inner">
+                              <div class="top_gallery__img-wrapper">
+                                <img
+                                  src="/src/img/img_gallery02.jpg"
+                                  width="800"
+                                  height="800"
+                                  alt="家具の写真"
+                                  class="top_gallery__img"
+                                />
+                              </div>
+
+                            </div>
+                            <!-- /.top_success-inner -->
+                          </li>
+                          <li class="top_gallery__item swiper-slide">
+                            <div class="top_gallery__inner">
+                              <div class="top_gallery__img-wrapper">
+                                <img
+                                  src="/src/img/img_gallery03.jpg"
+                                  width="584"
+                                  height="800"
+                                  alt="レンタルオフィスの様子"
+                                  class="top_gallery__imgr"
+                                />
+                              </div>
+
+                            </div>
+                            <!-- /.top_success-inner -->
+                          </li>
+                        </ul>
+                        <div class="top_gallery__dots swiper-pagination"></div>
+                      </div>
+
 
 
                     <div class="top_gallery__btn-wrapper">

@@ -671,6 +671,54 @@ body {
 // ********* top_gallery ********* //
 .top_gallery {
     padding: 96px 0;
+    overflow: hidden;
+    &__list-wrapper {
+        position: relative;
+        // max-width: calc(var(--content-width-lg) + 32px); 
+        @include mix.mq(mix.$lg) {
+            margin-left: auto;
+            margin-right: auto;
+            // overflow: hidden;
+            height: auto;
+        }
+    }
+    &__item {
+        padding: 48px 16px;
+        height: 100%;
+        background: var.$whiteColor;
+        @include mix.mq(mix.$lg) {
+            width: 352px;
+        }
+      }
+    &__inner {
+        margin: 0 auto;
+        max-width: var(--content-width-sm);
+    }
+    &__img-wrapper {
+        margin-top: 32px;
+      }
+    &__dots {
+        position: absolute;
+        // これに変わる記述を考える
+        left: 50% !important;
+        bottom: -90px !important;
+        transform: translateX(-50%);
+        width: 96px !important;
+        height: 16px;
+        display: flex;
+        justify-content: space-between;
+      }
+    &__dots .swiper-pagination-bullet {
+        background: var.$grayColor;
+        width: 16px;
+        height: 16px;
+        border-radius: 100vh;
+        color: transparent;
+      }
+    &__dots .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        background: var.$accentColor;
+      }
+
     &__btn-wrapper {
         display: flex;
         justify-content: center;
@@ -678,6 +726,7 @@ body {
         margin-top: 35px;
 }
 }
+
 
 // ********* top_faq ********* //
 .top_faq {
