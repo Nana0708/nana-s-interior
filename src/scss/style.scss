@@ -38,7 +38,7 @@ body {
     height: 55px;
     width: 100%;
     padding: 0 15px;
-    background: var.$whiteColor;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -139,10 +139,12 @@ body {
 }
     &__access {
     &--wrapper{
+        @include mix.mq(mix.$lg) {
         display: flex;
         flex-direction: row-reverse;
-        align-items: end;
+        align-items: flex-end;
         gap: 20px;
+        }
     }
         
     &--map-container iframe {
@@ -223,10 +225,16 @@ body {
 
 
 // -------------- utility --------------//
+.u_lg_dn {
+    @include mix.mq(mix.$lg) {
+        display: none;
+    }
+}
 
 // -------------- module 使いまわしができるパーツ --------------//
 .m_section__ttl {
     font-size: 24px;
+    text-align: center;
     @include mix.mq(mix.$lg) {
         font-size: 36px;
         position: relative;
@@ -238,9 +246,13 @@ body {
             background: var.$accentColor;
             position: absolute;
             left: 33%;
+            @include mix.mq(mix.$md) {
+                left: 42%;
+                }
             @include mix.mq(mix.$lg) {
                 width: 20px;
                 height: 20px;
+                left: 40%;
                 }
         }
 }
@@ -383,9 +395,161 @@ body {
 // -------------- js --------------//
 // -------------- top --------------//
 // ********* top_kv ********* //
-// ********* top_concept ********* //
-// ********* top_menu ********* //
+.top_kv {
+    padding: 0 15px;
+    height: 100vh;
+    background-image: url(../src/img/bg_top.jpg);
+    background-repeat: no-repeat;
+    background-position: 78% bottom  ;
+    background-size: cover;
+    @include mix.mq(mix.$lg) {
+        padding: 0 40px;
+    }
+    &-box {
+        position: absolute;
+        top: 40%;
+        @include mix.mq(mix.$lg) {
+            top: 50%;
+        }
+    }
+    &__copy {
+        font-size: 24px;
+        @include mix.mq(mix.$lg) {
+            font-size: 50px;
+        }
+    }
+    &__scroll {
+        position: absolute;
+        bottom: -12%;
+        right: 16px;
+        &--txt {
+            writing-mode: vertical-rl;
+            font-size: 14px;
+            @include mix.mq(mix.$lg) {
+                font-size: 16px;
+            }
+        }
+        &--arrow {
+            position: absolute;
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -4px;
+                right: 2px;
+                width: 1px;
+                height: 70px;
+                background: var.$blackColor;
+                @include mix.mq(mix.$lg) {
+                    height: 90px;
+                }
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                right: -1px;
+                width: 6px;
+                height: 6px;
+                border-bottom: 1px solid var.$blackColor;
+                border-right: 1px solid var.$blackColor;
+                transform: rotate(45deg);
+            }
+
+        }
+    }
+}
+// ********* top_features ********* //
+.top_features {
+    &__inner {
+        padding: 180px 16px;
+    }
+    &__item {
+        margin-top: 40px;
+        &-wrapper {
+            @include mix.mq(mix.$md) {
+                display: flex;
+                justify-content: space-between;
+                gap: 40px;
+            }
+        }
+    }
+    &__img-wrapper {
+        margin: 0 auto;
+        width: 343px;
+        height: auto;
+    }
+    &__img {
+        width: 100%;
+        height: auto;
+    }
+    
+    &__txt--ttl {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+
+    }
+    &__txt--desc {
+        margin-top: 10px;
+
+    }
+}
+// ********* top_product ********* //
+.top_product {
+    &__inner {
+        // padding: 65px 40px;
+        padding: 65px 0;
+    }
+    &__item-wrapper {
+        @include mix.mq(mix.$lg) {
+            display: flex;
+        }
+    }
+    &__item {
+        margin-top: 35px;
+
+    }
+    &__img-wrapper {
+        margin: 0 auto;
+        width: 343px;
+        height: auto;
+    }
+    &__img {
+        width:100%;
+        height:auto;
+    }
+    &__txt{
+        &-wrapper {
+            padding: 0 40px;
+        }
+        &--ttl {
+            font-size: 18px;
+            margin-top: 10px;
+            text-align: center;
+            @include mix.mq(mix.$lg) {
+                font-size: 24px;
+            }
+        }
+        &--desc {
+            margin-top: 10px;
+        }
+        &--price {
+            margin-top: 10px;
+            text-align: right;
+        }
+    }
+    &__btn-wrapper {
+        margin-top: 40px;
+        
+    }
+}
+// ********* top_sub-section ********* //
+
 // ********* top_news ********* //
+
+// ********* top_gallery ********* //
+
+// ********* top_q&a ********* //
 // ********* top_contact ********* //
 
 // -------------- menu --------------//
