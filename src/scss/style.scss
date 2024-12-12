@@ -501,8 +501,11 @@ body {
         padding: 65px 0;
     }
     &__item-wrapper {
-        @include mix.mq(mix.$lg) {
+        @include mix.mq(mix.$md) {
             display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
         }
     }
     &__item {
@@ -539,19 +542,257 @@ body {
         }
     }
     &__btn-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin-top: 40px;
-        
     }
 }
 // ********* top_sub-section ********* //
+.top_sub-section {
+    background: var.$grayColor;
+    padding: 40px 0;
+    &__inner {
+        @include mix.mq(mix.$lg) {
+        }
+    }
+    &__item {
+        @include mix.mq(mix.$lg) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row-reverse;
+            gap: 80px;
+            padding: 0 40px;
+        }
+    }
+    &__img-wrapper {
+            margin: 0 auto;
+            width: 343px;
+            height: auto;
+            @include mix.mq(mix.$md) {
+                width: 620px;
+            }
+        }
+    &__img {
+            width:100%;
+            height:auto;
+            @include mix.mq(mix.$lg) {
+                width: 620px;
+                height: 380px;
+            }
+        }
+    &__txt {
+        &-wrapper {
+            padding: 0 15px;
+        }
+        &--ttl {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+            @include mix.mq(mix.$lg) {
+                font-size: 32px;
+                font-weight: bold;
+            }
+        }
+        &--desc {
+            margin-top: 10px;
+            @include mix.mq(mix.$lg) {
+                margin-top: 24px;
+            }
+        }
+    }
+    }
+
 
 // ********* top_news ********* //
+.top_news {
+    &__inner {
+        padding: 40px 15px;
+    }
+    &__article {
+        margin-top: 35px;
+        &-wrapper {
+            @include mix.mq(mix.$md) {
+                display: flex;
+                justify-content: space-between;
+                gap: 60px;
+            }
+        }
+    &--img-wrapper {
+        margin: 0 auto;
+        width: 343px;
+        height: auto;
+        @include mix.mq(mix.$lg) {
+            width: 570px;
+        }
+    }
+    &--img {
+        width:100%;
+        height:auto;
+    }
+    &--txt {
+        &-top {
+            @include mix.mq(mix.$md) {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+            }
+        }
+        &-ttl {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+            @include mix.mq(mix.$lg) {
+                font-size: 24px;
+            }
+
+        }
+        &-date {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        &-desc {
+            margin-top: 10px;
+            @include mix.mq(mix.$md) {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+ &__btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+ }
+}
 
 // ********* top_gallery ********* //
+.top_gallery {
+    padding: 96px 0;
+    &__btn-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 35px;
+}
+}
 
-// ********* top_q&a ********* //
+// ********* top_faq ********* //
+.top_faq {
+    background: var.$grayColor;
+    &__inner {
+        padding: 96px 15px;
+    }
+    &__heading {
+        text-align: center;
+        font-size: 20px;
+        margin-top: 35px;
+    }
+    &-wrapper {
+        margin-top: 24px;
+    }
+    &__unit {
+        border-radius: 6px;
+        background: var.$whiteColor;
+        border: 1px solid var.$grayColor;
+        overflow: hidden;
+      }
+     &__question {
+        padding: 16px;
+        display: flex;
+        width: 100%;
+        &--tag {
+            font-weight: bold;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid var.$grayColor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+          } 
+        &--txt {
+            font-weight: bold;
+            margin-left: 16px;
+            width: 100%;
+            text-align: left;
+          }
+        &--mark {
+            flex-shrink: 0;
+            position: relative;
+            width: 16px;
+            margin: auto 0 auto 8px;
+            &::before {
+                content: "";
+                width: 16px;
+                height: 2px;
+                background: var.$accentColor;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                  /* コード上だと全てプラスマークになっていますがJavaScriptの授業で切り替えを行います。 */
+              }
+            &::after {
+                content: "";
+                width: 2px;
+                height: 16px;
+                background: var.$accentColor;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+          }
+        }
+        &__answer {
+            padding: 16px 48px 16px 16px;
+            display: flex;
+            width: 100%;
+            border-top: 1px solid var.$grayColor;
+            &--tag {
+                color: var.$whiteColor;
+                font-weight: bold;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                border: 1px solid var.$accentColor;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                background: var.$accentColor;
+              }
+              &--txt {
+                width: 100%;
+                margin-left: 16px;
+                text-align: left;
+              }
+          }
+      }
+
 // ********* top_contact ********* //
+.top_contact {
+    &__inner {
+        padding: 60px 15px;
+    }
+    &__txt {
+        text-align: center;
+        margin-top: 35px;
+    }
+    &__btn-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+    }
+}
 
-// -------------- menu --------------//
+// -------------- product --------------//
 // -------------- news --------------//
 // -------------- contact --------------//
+// -------------- preparation --------------//
+// -------------- 404??? --------------//
