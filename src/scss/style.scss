@@ -94,7 +94,6 @@ body {
             @include mix.mq(mix.$lg) {
                 font-size: 16px;
                 color: var.$blackColor;
-
             }
 } 
             &__link {
@@ -116,9 +115,7 @@ body {
  
             }
 }
-        &__sns--wrapper {
-            display: flex;
-            gap: 20px;
+        &__sns--wrapper {margin-left: 10px;
 
         }
 }
@@ -257,113 +254,66 @@ body {
         }
 }
 
-// .m_btn {
-//     width: 200px;
-//     height: 50px;
-//     border: 1px solid var.$blackColor;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     font-size: 14px;
-
-//     @include mix.mq(mix.$lg) {
-//         width: 280px;
-//         height: 70px;
-//         font-size: 20px;
-//         }
-
-//     &__more {
-//         position: relative;
-//         &::before {
-//             content: "";
-//             position: absolute;
-//             top: 50%;
-//             right: -30px;
-//             width: 30%;
-//             height: 1px;
-//             background: #333333;
-//             -webkit-transition: all .3s;
-//             transition: all .3s;
-//         }
-//         &::after {
-//             content: "";
-//             position: absolute;
-//             top: 45%;
-//             right: -32px;
-//             width: 15px;
-//             height: 1px;
-//             background: #333333;
-//             -webkit-transform: rotate(35deg);
-//             transform: rotate(35deg);
-//             -webkit-transition: all .3s;
-//             transition: all .3s;
-//         }
-
-//     }
-// }
-
-  .m_btn{
+.m_btn {
     width: 200px;
     height: 50px;
-    background:var.$primaryColor;
-    color:var.$whiteColor;
-    border:none;
+    background: var.$primaryColor;
+    color: var.$whiteColor;
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    position:relative;
-    font-size:14px;
-    cursor:pointer;
-    transition:800ms ease all;
-    outline:none;
-    &:hover{
-        background:var.$whiteColor;
-        color: var.$primaryColor;
-
-      }
-    &:before{
-        content:'';
-        position:absolute;
-        top:0;
-        right:0;
-        height:2px;
-        width:0;
-        background: var.$primaryColor;
-        transition:400ms ease all;
-      }
-    &::after{
-        content:'';
-        position:absolute;
-        top:0;
-        right:0;
-        height:2px;
-        width:0;
-        background: var.$primaryColor;
-        transition:400ms ease all;
-      }
-      &:after{
-        right:inherit;
-        top:inherit;
-        left:0;
-        bottom:0;
-      }
-      &:hover:before,m_btn:hover:after{
-        width:100%;
-        transition:800ms ease all;
-      }
+    position: relative;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+  
+    &:hover {
+      background: var.$whiteColor;
+      color: var.$primaryColor;
+    }
+  
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 0;
+      background: var.$primaryColor;
+      transition: 400ms ease all;
+    }
+  
+    &::before {
+      top: 0;
+      right: 0;
+    }
+  
+    &::after {
+      bottom: 0;
+      left: 0;
+    }
+  
+    &:hover::before,
+    &:hover::after {
+      width: 100%;
+      transition: 800ms ease all;
+    }
   }
+  
+
   .m_hamburger {
     width: 32px;
     height: 24px;
     position: relative;
-    z-index: var(--z-index-menu);
+    z-index: var.$zIndexMenu;
   }
   
   .m_hamburger-bar {
     width: 100%;
     height: 2px;
     position: absolute;
-    background: var(--black-color);
+    background: var.$blackColor;
     left: 50%;
   }
   
@@ -390,8 +340,117 @@ body {
     width: 20px;
     height: 20px;
     }
-
 }
+.m_kv {
+    background: var.$grayColor;
+    padding: 0 15px;
+    height: 60vh;
+    position: relative;
+    @include mix.mq(mix.$lg) {
+        padding: 0 40px;
+    }
+    &-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% ,-50%);
+        @include mix.mq(mix.$lg) {
+            top: 50%;
+        }
+    }
+    &__copy {
+        font-size: 30px;
+        position: relative;
+        text-align: center;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50% ,-50%);
+            color: var.$whiteColor;
+            font-size: 80px;
+            z-index: var.$zIndexBack;
+            @include mix.mq(mix.$lg) {
+                font-size: 100px;
+            }
+        }
+        &--product::after {
+            content: "Product";
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50% ,-50%);
+            color: var.$whiteColor;
+            font-size: 80px;
+            z-index: var.$zIndexBack;
+            @include mix.mq(mix.$lg) {
+                font-size: 100px;
+        }
+    }
+        &--news::after {
+            content: "News";
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50% ,-50%);
+            color: var.$whiteColor;
+            font-size: 80px;
+            z-index: var.$zIndexBack;
+            @include mix.mq(mix.$lg) {
+                font-size: 100px;
+        }
+    }
+        &--contact::after {
+            content: "Contact";
+            position: absolute;
+            top: 1%;
+            left: 50%;
+            transform: translate(-50% ,-50%);
+            color: var.$whiteColor;
+            font-size: 80px;
+            z-index: var.$zIndexBack;
+            @include mix.mq(mix.$lg) {
+                font-size: 100px;
+        }
+    }
+}
+}
+
+
+.m_pagination__numbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border: 1px solid var.$primaryColor;
+    font-weight: bold;
+    background: var.$whiteColor;
+    &--current {
+        color: var.$whiteColor;
+        background: var.$primaryColor;
+    }
+    &--between {
+        border: none;
+    }
+    &--next {
+        position: relative;
+        &::before {
+            content:'';
+            width: 7px;
+            height: 7px;
+            border-bottom: 1px solid var.$primaryColor;
+            border-right: 1px solid var.$primaryColor;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%) rotate(-45deg);
+        }
+    }
+}
+
+
 // -------------- js --------------//
 // -------------- top --------------//
 // ********* top_kv ********* //
@@ -696,7 +755,19 @@ body {
     }
     &__img-wrapper {
         margin-top: 32px;
+        width: 320px;
+        margin: 32px auto auto;
+        height: auto;
+
+        @include mix.mq(mix.$lg) {
+            width: 400px;
+        }
       }
+    &__img {
+        max-width: 100%;
+        height: auto;
+
+    }
     &__dots {
         position: absolute;
         // これに変わる記述を考える
@@ -706,13 +777,16 @@ body {
         width: 96px !important;
         height: 16px;
         display: flex;
-        justify-content: space-between;
+        align-items: center;
+        justify-content: center;
       }
     &__dots .swiper-pagination-bullet {
         background: var.$grayColor;
         width: 16px;
-        height: 16px;
-        border-radius: 100vh;
+        // height: 16px;
+        display: flex;
+        justify-content: center;
+        border-radius: 50vh;
         color: transparent;
       }
     &__dots .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -723,7 +797,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 35px;
+        margin-top: 120px;
 }
 }
 
@@ -841,7 +915,225 @@ body {
 }
 
 // -------------- product --------------//
+
+.product {
+    &_main {
+        background: var.$grayColor;
+    }
+    &__inner {
+        // padding: 65px 40px;
+        padding: 65px 0;
+    }
+    &__item-wrapper {
+        @include mix.mq(mix.$md) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+    }
+    &__item {
+        margin-top: 35px;
+        @include mix.mq(mix.$md) {
+            width: calc(100% / 4);
+        }
+
+    }
+    &__img-wrapper {
+        margin: 0 auto;
+        width: 343px;
+        height: auto;
+    }
+    &__img {
+        width:100%;
+        height:auto;
+    }
+    &__txt{
+        &-wrapper {
+            padding: 0 40px;
+            @include mix.mq(mix.$lg) {
+                padding: 0 0;
+                text-align: center;
+            }
+        }
+        &--ttl {
+            font-size: 18px;
+            margin-top: 10px;
+            text-align: center;
+            @include mix.mq(mix.$lg) {
+                font-size: 24px;
+            }
+        }
+        &--desc {
+            margin-top: 10px;
+        }
+        &--price {
+            margin-top: 10px;
+            text-align: right;
+        }
+    }
+    &__btn-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+    }
+}
+
+
+
 // -------------- news --------------//
+.news {
+    &_inner {
+        padding: 40px 15px;
+    }
+    &_article {
+        margin-top: 40px;
+        @include mix.mq(mix.$md) {
+            width: 800px;
+            margin: 35px auto 0;
+        }
+    &__img-wrapper {
+        margin: 0 auto;
+        width: 343px;
+        height: 240px;
+        @include mix.mq(mix.$lg) {
+            width: 800px;
+            height: 440px;
+        }
+    }
+    &__img {
+        max-width:100%;
+        max-height: 100%;
+        object-fit: cover;
+    }
+    &__txt {
+
+        &--top {
+            @include mix.mq(mix.$md) {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+            }
+        }
+        &--ttl {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+            @include mix.mq(mix.$lg) {
+                font-size: 24px;
+            }
+
+        }
+        &--date {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        &--desc {
+            margin-top: 10px;
+            @include mix.mq(mix.$md) {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+ &_btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+ }
+ &_pagination {
+     margin-top: 48px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 8px;
+ }
+}
+
+
 // -------------- contact --------------//
+.contact {
+    &_main {
+        padding: 96px 0;
+    }
+    &_form {
+        margin-top: 36px;
+        &__box {
+            padding: 0 15px;
+        }
+        &__box--txt {
+            text-align: center;
+            font-size: 14px;
+            @include mix.mq(mix.$md) {
+                font-size: 18px;
+            }
+        }
+        &__btn-wrapper {
+            margin-top: 24px;
+            @include mix.mq(mix.$md) {
+                margin-top: 48px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+             }
+            }
+        &__heading {
+            position: relative;
+            font-weight: bold;
+            margin-top: 24px;
+        }
+        &__required{
+            font-weight: normal;
+            font-size: 12px;
+            color: var.$whiteColor;
+            background: var.$accentColor;
+            border: 1px solid var.$accentColor;
+            padding: 1px 3px;
+            margin-left: 10px;
+        }
+        &__input {
+            width: 100%;
+            height: 43px;
+            border: 1px solid var.$primaryColor;
+            margin-top: 8px;
+            background: var.$whiteColor;
+        }
+        &__textarea {
+            width: 100%;
+            height: 223px;
+            border: 1px solid var.$primaryColor;
+            margin-top: 8px;
+            font-size: 14px;
+            background: var.$whiteColor;
+        }
+        &__checkbox {
+            appearance: checkbox;
+            width: 24px;
+            height: 24px;
+            border-radius: 50vh;
+            &:hover {
+                color: var.$primaryColor;
+            }
+        }
+    }
+    &_privacy{
+        &__wrapper {
+            text-align: center;
+            margin-top: 24px;
+        }
+        &__txt {
+        color: var.$accentColor;
+        margin-top: 24px;
+        }
+        &__link {
+            text-decoration: underline;
+        }
+    }
+}
+
+
 // -------------- preparation --------------//
 // -------------- 404??? --------------//
