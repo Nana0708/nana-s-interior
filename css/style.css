@@ -278,17 +278,15 @@ body {
   transition: 0.3s all;
   transform: scale(0, 1);
 }
-.l_header-sns--wrapper {
-  margin-left: 10px;
-}
-.l_header-sns__img {
-  display: none;
+.l_header-sns-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 @media (min-width: 1080px) {
   .l_header-sns__img {
-    display: block;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -415,7 +413,7 @@ body {
 }
 @media (min-width: 768px) {
   .m_section__ttl::before {
-    left: 42%;
+    left: 41%;
   }
 }
 @media (min-width: 1080px) {
@@ -423,6 +421,37 @@ body {
     width: 20px;
     height: 20px;
     left: 40%;
+  }
+}
+
+.m_section__ttl--sanmozi {
+  font-size: 24px;
+  text-align: center;
+}
+@media (min-width: 1080px) {
+  .m_section__ttl--sanmozi {
+    font-size: 36px;
+    position: relative;
+  }
+}
+.m_section__ttl--sanmozi::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #BD6856;
+  position: absolute;
+  left: 37%;
+}
+@media (min-width: 768px) {
+  .m_section__ttl--sanmozi::before {
+    left: 43%;
+  }
+}
+@media (min-width: 1080px) {
+  .m_section__ttl--sanmozi::before {
+    width: 20px;
+    height: 20px;
+    left: 43%;
   }
 }
 
@@ -776,6 +805,11 @@ body {
   padding: 40px 0;
 }
 @media (min-width: 1080px) {
+  .top_sub-section__inner {
+    padding: 120px 0;
+  }
+}
+@media (min-width: 1080px) {
   .top_sub-section__item {
     display: flex;
     justify-content: center;
@@ -830,6 +864,11 @@ body {
 
 .top_news__inner {
   padding: 40px 15px;
+}
+@media (min-width: 768px) {
+  .top_news__inner {
+    padding: 120px 15px;
+  }
 }
 .top_news__article {
   margin-top: 35px;
@@ -977,6 +1016,11 @@ body {
 .top_faq__inner {
   padding: 96px 15px;
 }
+@media (min-width: 768px) {
+  .top_faq__inner {
+    padding: 120px 15px;
+  }
+}
 .top_faq__heading {
   text-align: center;
   font-size: 20px;
@@ -1068,6 +1112,11 @@ body {
 .top_contact__inner {
   padding: 60px 15px;
 }
+@media (min-width: 768px) {
+  .top_contact__inner {
+    padding: 120px 15px;
+  }
+}
 .top_contact__txt {
   text-align: center;
   margin-top: 35px;
@@ -1133,7 +1182,7 @@ body {
   margin-top: 10px;
   text-align: right;
 }
-.product__btn-wrapper {
+.product_btn-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
