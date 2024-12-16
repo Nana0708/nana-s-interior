@@ -45,6 +45,9 @@ body {
   top: 0;
   left: 0;
   z-index: var.$zIndexHeader;
+  &.js_changeColor {
+    background: var.$whiteColor;
+  }
   &-logo {
     font-size: 30px;
     font-weight: bold;
@@ -54,7 +57,7 @@ body {
   }
   &-nav {
     display: none;
-    background: var.$whiteColor; /* 背景色 */
+    background: var.$whiteColor;
     width: 70%;
     position: fixed;
     top: 55px;
@@ -90,6 +93,7 @@ body {
       font-size: 16px;
       color: var.$whiteColor;
       text-align: left;
+
       @include mix.mq(mix.$lg) {
         font-size: 16px;
         color: var.$blackColor;
@@ -114,9 +118,12 @@ body {
     }
   }
   &-sns-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    display: none;
+    @include mix.mq(mix.$lg) {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
   }
   &-sns__img {
     @include mix.mq(mix.$lg) {
@@ -331,6 +338,9 @@ body {
   height: 24px;
   position: relative;
   z-index: var.$zIndexMenu;
+  @include mix.mq(mix.$lg) {
+    display: none;
+    }
 }
 
 .m_hamburger-bar {
@@ -467,9 +477,33 @@ body {
 }
 
 // -------------- js --------------//
+.js_hamburger.is-active .m_hamburger-bar{
+    &:first-child {
+        top: 50%;
+        transform: translate(-50%, 0) rotate(45deg);
+      }
+    &:nth-child(2) {
+        opacity: 0;
+      }
+    
+    &:last-child{
+        top: 50%;
+        transform: translate(-50%, 0) rotate(-45deg);
+      }
+}
+
+.js_body.is-active {
+    overflow: hidden;
+}
+
+.js_nav.is-active {
+        display: block;
+        pointer-events: inherit;
+}
 // -------------- top --------------//
 // ********* top_kv ********* //
 .top_kv {
+
   padding: 0 15px;
   height: 100vh;
   background-image: url(../src/img/bg_top.jpg);
@@ -494,7 +528,7 @@ body {
   }
   &__scroll {
     position: absolute;
-    bottom: -12%;
+    bottom: -9%;
     right: 16px;
     &--txt {
       writing-mode: vertical-rl;
@@ -534,14 +568,17 @@ body {
 // ********* top_features ********* //
 .top_features {
   &__inner {
-    padding: 180px 16px;
+    padding: 180px 15px;
   }
   &__item {
     margin-top: 40px;
+    @include mix.mq(mix.$md) {
+        width: calc(100% /3);
+      }
     &-wrapper {
       @include mix.mq(mix.$md) {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         gap: 40px;
       }
     }
@@ -549,11 +586,11 @@ body {
   &__img-wrapper {
     margin: 0 auto;
     width: 343px;
-    height: auto;
+    height:190px
   }
   &__img {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
+    max-height: 100%;
   }
 
   &__txt--ttl {
@@ -785,7 +822,7 @@ body {
   }
   &__dots {
     position: absolute;
-    left: 40% !important;
+    left: 38% !important;
     bottom: -90px !important;
     transform: translateX(-50%);
     width: 96px !important;
@@ -945,16 +982,18 @@ body {
   &__item-wrapper {
     @include mix.mq(mix.$md) {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       flex-wrap: wrap;
       gap: 40px;
-    //   padding: 0 15px;
     }
   }
   &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 35px auto 0;
     @include mix.mq(mix.$md) {
-      width: calc(100% / 3);
+        width: calc(100% / 3);
     }
   }
   &__img-wrapper {
@@ -963,15 +1002,12 @@ body {
   }
   &__img {
     max-width: 100%;
-    height: auto;
+    min-height: 100%;
     margin: 0 auto;
   }
   &__txt {
     &-wrapper {
       margin: 60px auto;
-      @include mix.mq(mix.$lg) {
-        text-align: center;
-      }
     }
     &--ttl {
       font-size: 18px;
@@ -984,6 +1020,7 @@ body {
     }
     &--desc {
       margin-top: 10px;
+      text-align: center;
     }
     &--price {
       margin-top: 10px;
@@ -1022,7 +1059,7 @@ body {
       max-width: 100%;
       height: 240px;
       object-fit: cover;
-      @include mix.mq(mix.$md) {
+      @include mix.mq(mix.$lg) {
         height: 500px;
     }
 }
@@ -1030,14 +1067,14 @@ body {
         &-wrapper {
             margin-top: 10px;
             @include mix.mq(mix.$md) {
-                margin-top: 70px;
+                margin-top: 60px;
+                padding: 0 80px;
             }
         }
       &--top {
         @include mix.mq(mix.$md) {
           display: flex;
           justify-content: space-between;
-          margin-top: 20px;
         }
       }
       &--ttl {
