@@ -4,30 +4,26 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>n's interior</title>
-<meta name="description" content="ページの説明(例：スタートアップのためのデジタルマーケティングを支援)" />
+<meta name="description" content="あなただけのインテリアが見つかるインテリアショップ。お部屋にぴったりの家具や小物を幅広くご提案します。" />
+
 <meta name="format-detection" content="telephone=no" />
 
 <!-- favicon/web-clip-icon -->
-<link rel="icon" href="favicon.ico" type="image/ico" />
-<link rel="icon" href="favicon.png" type="image/png" />
-<link rel="icon" href="favicon.svg" type="image/svg+xml" />
-<link rel="apple-touch-icon" href="webclip.png" />
+<link rel="icon" href="/src/img/favicon.ico" type="image/ico" />
+<link rel="icon" href="/src/img/favicon.png" type="image/png" />
+<link rel="icon" href="/src/img/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/src/img/webclip.png" />
 
  <!-- ogp -->
 <meta property="og:site_name" content="n's interior" />
 <meta property="og:url" content="サイトのURL（絶対パス）" />
-<meta property="og:type" content="website(Webサイトのトップページ) or article（記事ページなどトップページ以外のページ） or blog（ブログのトップページ）" />
+<meta property="og:type" content="article" />
 <meta property="og:title" content="n's interior" />
-<meta property="og:description" content="ページの説明<description>７行目と同じ" />
+<meta property="og:description" content="あなただけのインテリアが見つかるインテリアショップ。お部屋にぴったりの家具や小物を幅広くご提案します。" />
 <meta property="og:image" content="OGP画像のURL（絶対ぱす）推奨サイズは1200*630" />
 <meta property="og:locale" content="ja_JP" />
 <meta property="fb:app_id" content="AppID">
 
-<!-- twitter専用の出力　いる？？？ -->
-<meta name="twitter:card" content="summary_large_image or summary" />
-<meta name="twitter:site" content="@twitter_id" />
-<meta name="twitter:description" content="ページの説明" />
-<meta name="twitter:image:src" content="URL" />
 
  <!-- Adobe fonts -->
  <link rel="stylesheet" href="https://use.typekit.net/jdw6ncm.css">
@@ -47,6 +43,12 @@
 <link rel="stylesheet" href="css/style.css" />
 
 <!-- js -->
+ <!-- スワイパー -->
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <!-- g-sap -->
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
@@ -54,47 +56,47 @@
 <script src="/src/js/main.js" defer></script>
 
 </head>
-<body>
-    <header class="l_header">
-        <h1 class="l_header-logo">
+<body class="js_body">
+    <header class="l_header js_header">
+        <h1 class="l_header-logo js_header-logo">
             <a href="/index.html" class="l_header-logo_link">n's INTERIOR
             </a>
         </h1>
         <nav class="l_header-nav js_nav">
             <ul class="l_header-nav__list">
-                <li class="l_header-nav__item">
-                    <a href="#features" class="l_header-nav__link">Features</a>
+                <li class="l_header-nav__item js_header-nav__item">
+                    <a href="index.html#features" class="l_header-nav__link js_header-nav__item">Features</a>
                 </li>
-                <li class="l_header-nav__item">
+                <li class="l_header-nav__item js_header-nav__item">
                     <a href="/product.html"
-                    class="l_header-nav__link">Product</a>
+                    class="l_header-nav__link js_header-nav__item">Product</a>
                 </li>
-                <li class="l_header-nav__item">
+                <li class="l_header-nav__item js_header-nav__item">
                     <a href="/news.html" class="l_header-nav__link">News</a>
                 </li>
                 <li class="l_header-nav__item">
-                    <a href="/preparation.html" class="l_header-nav__link">Gallery</a>
+                    <a href="/preparation.html" class="l_header-nav__link js_header-nav__item">Gallery</a>
                 </li>
-                <li class="l_header-nav__item">
-                    <a href="#q&a" class="l_header-nav__link">Q&A</a>
+                <li class="l_header-nav__item js_header-nav__item">
+                    <a href="index.html#faq" class="l_header-nav__link">FAQ</a>
                 </li>
-                <li class="l_header-nav__item">
+                <li class="l_header-nav__item js_header-nav__item">
                     <a href="/contact.html" class="l_header-nav__link">Contact</a>
                 </li>
             </ul>
         </nav>
-        <div class="l_header__sns--wrapper">
-            <p class="m_sns__img-wrapper">
-                <a href="" class="m_sns__img--link"><img src="/src/img/icon_twitter.svg" alt="twitterのアイコン" width="29" height="24" class="m_sns__img"></a></p></div>
-            <p class="m_sns__img-wrapper">
-                <a href="" class="m_sns__img--link"><img src="/src/img/icon_instagram.svg" alt="インスタグラムのアイコン" width="28" height="28" class="m_sns__img"></a></p></div>
+        <div class="l_header-sns-wrapper">
+            <p class="l_header-sns__img-wrapper">
+                <a href="" class="l_header-sns__img--link"><img src="/src/img/icon_twitter.svg" alt="twitterのアイコン" width="29" height="24" class="l_header-sns__img"></a></p>
+            <p class="l_header-sns__img-wrapper">
+                <a href="" class="l_header-sns__img--link"><img src="/src/img/icon_instagram.svg" alt="インスタグラムのアイコン" width="28" height="28" class="l_header-sns__img"></a></p></div>
                 
         <button class="m_hamburger js_hamburger">
             <span class="m_hamburger-bar"></span>
             <span class="m_hamburger-bar"></span>
             <span class="m_hamburger-bar"></span>
           </button>
-       </header> 
+     
 
 
     <main class="preparation_main">
@@ -147,23 +149,23 @@
                             <a href="/preparation.html" class="l_footer-nav__link">Gallery</a>
                         </li>
                         <li class="l_footer-nav__item">
-                            <a href="#q&a" class="l_footer-nav__link">Q&A</a>
+                            <a href="#faq" class="l_footer-nav__link">FAQ</a>
                         </li>
                         <li class="l_footer-nav__item">
                             <a href="/contact.html" class="l_footer-nav__link">Contact</a>
                         </li>
                     </ul>
                 </div>
-                <div class="l_footer__sns--wrapper">
-                    <p class="m_sns__img-wrapper">
-                        <a href="" class="m_sns__img--link"><img src="/src/img/icon_twitter.svg" alt="twitterのアイコン" width="29" height="24" class="m_sns__img"></a></p>
-                    <p class="m_sns__img-wrapper">
-                        <a href="" class="m_sns__img--link"><img src="/src/img/icon_instagram.svg" alt="インスタグラムのアイコン" width="28" height="28" class="m_sns__img"></a></p></div>
+                <div class="l_footer-sns--wrapper">
+                    <p class="l_footer-sns__img-wrapper">
+                        <a href="" class="l_footer-sns__img--link"><img src="/src/img/icon_twitter_white.svg" alt="twitterのアイコン" width="29" height="24" class="l_footer-sns__img"></a></p>
+                    <p class="l_footer-sns__img-wrapper">
+                        <a href="" class="l_footer-sns__img--link"><img src="/src/img/icon_instagram_white.svg" alt="インスタグラムのアイコン" width="28" height="28" class="l_footer-sns__img"></a></p></div>
             </div>
         </div>
 
                 <div class="l_footer__copy">
-                    <small class="l_footer__copy--txt">&copy;2021 INTERIOR</small>
+                    <small class="l_footer__copy--txt">&copy;2021 n's INTERIOR</small>
                 </div>
     </footer>
     

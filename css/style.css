@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   color: #000;
   background: #fff;
@@ -224,6 +223,7 @@ body {
   right: 0;
   bottom: 0;
   background: #887260;
+  transform: translateX(100%);
 }
 @media (min-width: 1080px) {
   .l_header-nav {
@@ -680,6 +680,15 @@ body {
   pointer-events: inherit;
 }
 
+.js_faq-a {
+  height: 0;
+  opacity: 0;
+}
+
+.js_faq_mark.is-open::before {
+  opacity: 0;
+}
+
 .top_kv {
   padding: 0 15px;
   height: 100vh;
@@ -790,7 +799,7 @@ body {
 }
 
 .top_product__inner {
-  padding: 65px 0;
+  padding: 65px 15px;
 }
 @media (min-width: 768px) {
   .top_product__item-wrapper {
@@ -1097,31 +1106,30 @@ body {
   text-align: left;
 }
 .top_faq__question--mark {
-  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
   position: relative;
-  width: 16px;
-  margin: auto 0 auto 8px;
+  flex-shrink: 0;
 }
 .top_faq__question--mark::before {
   content: "";
-  width: 16px;
-  height: 2px;
-  background: #BD6856;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  /* コード上だと全てプラスマークになっていますがJavaScriptの授業で切り替えを行います。 */
-}
-.top_faq__question--mark::after {
-  content: "";
-  width: 2px;
-  height: 16px;
-  background: #BD6856;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 2px;
+  height: 100%;
+  background: #BD6856;
+}
+.top_faq__question--mark::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 2px;
+  background: #BD6856;
 }
 .top_faq__answer {
   padding: 16px 48px 16px 16px;
@@ -1430,4 +1438,89 @@ body {
   font-size: 16px;
   text-align: center;
   margin-top: 24px;
+}
+
+.privacy_main {
+  margin-top: 120px;
+}
+.privacy_section__ttl {
+  font-size: 24px;
+  text-align: center;
+}
+@media (min-width: 1080px) {
+  .privacy_section__ttl {
+    font-size: 36px;
+    position: relative;
+  }
+}
+.privacy_section__ttl::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #BD6856;
+  position: absolute;
+  left: 25%;
+}
+@media (min-width: 768px) {
+  .privacy_section__ttl::before {
+    left: 38%;
+  }
+}
+@media (min-width: 1080px) {
+  .privacy_section__ttl::before {
+    width: 20px;
+    height: 20px;
+    left: 36%;
+  }
+}
+.privacy_wrapper {
+  padding: 96px 15px;
+}
+@media (min-width: 768px) {
+  .privacy_wrapper {
+    padding: 120px 80px;
+  }
+}
+.privacy_box {
+  margin-top: 30px;
+}
+.privacy_box__ttl {
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .privacy_box__ttl {
+    text-align: center;
+    font-size: 24px;
+  }
+}
+.privacy_box__ttl::after {
+  content: "";
+}
+@media (min-width: 768px) {
+  .privacy_box__ttl::after {
+    width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    background: #887260;
+    position: absolute;
+    bottom: 5px;
+  }
+}
+@media (min-width: 768px) {
+  .privacy_box__txt {
+    margin-top: 16px;
+  }
+}
+.privacy_box__list {
+  margin-top: 8px;
+}
+.privacy_box__item {
+  list-style: decimal;
+  margin-left: 24px;
+}
+.privacy_box__list--access {
+  margin-top: 8px;
 }/*# sourceMappingURL=style.css.map */

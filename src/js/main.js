@@ -52,6 +52,29 @@ body.classList.toggle("is-active");
       }
     })
   })
+// 右からにょきっと出す
+
+let isMenuOpen = false;
+
+hamburger.addEventListener("click", () => {
+  isMenuOpen = !isMenuOpen; // 開閉状態をトグル
+
+  if (isMenuOpen) {
+    // メニューを右から表示
+    gsap.fromTo(
+      navigation,
+      { x: "100%" }, // 初期位置：画面外
+      { x: "0%", duration: 0.5, ease: "power2.out" } // 表示位置
+    );
+  } else {
+    // メニューを右に隠す
+    gsap.to(navigation, {
+      x: "100%",
+      duration: 0.5,
+      ease: "power2.in",
+    });
+  }
+});
   
   
   // ********* ヘッダーロゴとナビのアニメーション ********* //
@@ -203,10 +226,114 @@ stagger: {
 },
 });
 
+// productページ
+gsap.from(".js_product",{
+  y:50,
+  autoAlpha: 0,
+  duration: 0.5,
+  ease: "Power4.inOut",
+  
+scrollTrigger: {
+  trigger: ".js_product__trigger",
+  start: "top 80%",
+
+},
+stagger: {
+  each: 0.6,
+  from: "start",
+
+},
+});
+// newsページ
+gsap.from(".js_news",{
+  y:50,
+  autoAlpha: 0,
+  duration: 2,
+  ease: "Power4.inOut",
+  
+scrollTrigger: {
+  trigger: ".js_news__trigger",
+  start: "top 80%",
+
+},
+stagger: {
+  each: 0.6,
+  from: "start",
+
+},
+});
+
+// contactページ
+gsap.from(".js_contact",{
+  y:50,
+  autoAlpha: 0,
+  duration: 1,
+  ease: "Power4.inOut",
+  
+scrollTrigger: {
+  trigger: ".js_contact__trigger",
+  start: "top 80%",
+
+},
+stagger: {
+  each: 0.6,
+  from: "start",
+
+},
+});
+
 
 
 
 // ********* top_faq アコーディオン ********* //
+const faq = document.querySelectorAll(".js_faq");
+
+faq.forEach(function(element) {
+  const faqA = element.querySelector(".js_faq-a");
+
+  element.addEventListener("click", function() {
+    if (element.classList.contains("is-active")) {
+      // アコーディオンを閉じるときの処理
+      // アイコン操作用クラスを切り替える(クラスを取り除く)
+      element.classList.toggle("is-active");
+      element.querySelector(".js_faq_mark").classList.toggle("is-open");
+
+      // アニメーション実行
+      closingAnim(faqA);
+    } else {
+      // アコーディオンを開くときの処理
+      // アイコン操作用クラスを切り替える(クラスを付与)
+      element.classList.toggle("is-active");
+      element.querySelector(".js_faq_mark").classList.toggle("is-open");
+
+      // アニメーション実行
+      openingAnim(faqA);
+    }
+  });
+});
+
+const closingAnim = function(content) {
+  gsap.to(content, {
+    height: 0,
+    opacity: 0,
+    duration: 0.4,
+    ease: "Power4.inOut",
+  });
+};
+
+const openingAnim = function(content) {
+  gsap.fromTo(
+    content, {
+      height: 0,
+      opacity: 0,
+    }, {
+      height: "auto",
+      opacity: 1,
+      duration: 0.4,
+      ease: "Power4.inOut",
+    }
+  );
+};
 
 // ********* top_galleryのカルーセル ********* //
 const swiper = new Swiper(".js_success-swiper", {
@@ -224,8 +351,9 @@ const swiper = new Swiper(".js_success-swiper", {
       768: {
         slidesPerView: 2,
       },
-      1088: {
+      1080: {
         slidesPerView: 2,
       },
     },
   });
+
